@@ -58,7 +58,8 @@ def handle_otp(type, username):
             
             secret = record["otp_special"]
 
-            return []
+            # Return the otp secret so the mobile app can compute/verify TOTP
+            return [200, secret]
         
         except:
             return [400, "err"]
